@@ -1,23 +1,38 @@
-import { signIn, signOut } from "auth"
-import { Button } from "./ui/button"
+import { signIn, signOut } from "@/auth"
+
+
+// export default function SignIn() {
+//   return (
+//     <form
+//       action={async () => {
+//         "use server"
+//         await signIn("github")
+//       }}
+//     >
+//       <button type="submit">Signin</button>
+//     </form>
+//   )
+// } 
 
 export function SignIn({
   provider,
   ...props
-}: { provider?: string } & React.ComponentPropsWithRef<typeof Button>) {
+}: { provider?: string }) {
   return (
     <form
       action={async () => {
         "use server"
+        debugger
         await signIn(provider)
       }}
     >
-      <Button {...props}>Sign In</Button>
+      <button type="submit">Signin</button>
     </form>
   )
 }
 
-export function SignOut(props: React.ComponentPropsWithRef<typeof Button>) {
+
+export function SignOut() {
   return (
     <form
       action={async () => {
@@ -26,9 +41,7 @@ export function SignOut(props: React.ComponentPropsWithRef<typeof Button>) {
       }}
       className="w-full"
     >
-      <Button variant="ghost" className="w-full p-0" {...props}>
-        Sign Out
-      </Button>
+     <button type="submit">SignOut</button>
     </form>
   )
 }
