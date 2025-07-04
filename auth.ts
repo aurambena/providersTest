@@ -1,8 +1,7 @@
 import NextAuth from "next-auth"
 import "next-auth/jwt"
 import EmailProvider from "next-auth/providers/email"
-import { MongoDBAdapter } from "@auth/mongodb-adapter"
-import clientPromise from "@/lib/mongodb" // or your database adapter
+
 
 import Apple from "next-auth/providers/apple"
 // import Atlassian from "next-auth/providers/atlassian"
@@ -63,13 +62,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       clientId: process.env.GOOGLE_ID!,
       clientSecret: process.env.GOOGLE_SECRET!,
   }),
-  EmailProvider({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM,
-    }),
+  // EmailProvider({
+  //     server: process.env.EMAIL_SERVER,
+  //     from: process.env.EMAIL_FROM,
+  //   }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
-   session: { strategy: "database" }, // Required for email magic links
+  //  session: { strategy: "database" }, // Required for email magic links
     // Apple,
     // // Atlassian,
     // Auth0,
