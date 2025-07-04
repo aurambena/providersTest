@@ -1,5 +1,5 @@
 import { auth } from "auth"
-import ClientExample from "@/components/client-example"
+// import ClientExample from "@/components/client-example"
 import { SessionProvider } from "next-auth/react"
 
 export default async function ClientPage() {
@@ -15,8 +15,9 @@ export default async function ClientPage() {
   }
 
   return (
-    <SessionProvider basePath={"/auth"} session={session}>
-      <ClientExample />
-    </SessionProvider>
+    <></>
+    // <SessionProvider basePath={"/auth"} session={session}>
+    //   <ClientExample />
+    // </SessionProvider>
   )
 }

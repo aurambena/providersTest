@@ -22,7 +22,6 @@ export function SignIn({
     <form
       action={async () => {
         "use server"
-        debugger
         await signIn(provider)
       }}
     >
