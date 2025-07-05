@@ -9,6 +9,8 @@ import memoryDriver from "unstorage/drivers/memory"
 import vercelKVDriver from "unstorage/drivers/vercel-kv"
 import { UnstorageAdapter } from "@auth/unstorage-adapter"
 
+export const NEXTAUTH_URL = process.env.NEXTAUTH_URL
+
 const storage = createStorage({
   driver: process.env.VERCEL
     ? vercelKVDriver({
