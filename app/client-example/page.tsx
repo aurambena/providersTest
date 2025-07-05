@@ -11,7 +11,6 @@ export default async function ClientPage() {
       image: session.user.image,
     }
   }
-
   return (
     <></>
   )
